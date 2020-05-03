@@ -1,0 +1,10 @@
+botogram
+botogram2
+pywin32
+ctypes
+PyAutoGUI
+opencv-python
+SpeechRecognition
+requests
+pynput
+winregistry
