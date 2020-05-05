@@ -3,7 +3,6 @@ import tkinter
 import os
 import time
 import tkinter as tk
-from tkinter import *
 from tkinter.ttk import *
 from tkinter import ttk
 import botogram
